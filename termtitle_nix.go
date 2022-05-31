@@ -5,7 +5,8 @@ package termtitle
 import "fmt"
 
 func setTitle(title string) error {
-	fmt.Print("\033]0;" + title + "\007")
+	_, err := fmt.Print("\033]0;" + title + "\007")
+	return err
 }
 
 func getTitle() (string, error) {
