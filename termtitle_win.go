@@ -5,7 +5,6 @@ package termtitle
 import (
 	"errors"
 	"sync"
-	"syscall"
 	"unsafe"
 
 	"golang.org/x/sys/windows"
@@ -35,7 +34,7 @@ func setTitle(title string) error {
 		ptr = new(uint16)
 	} else {
 		var err error
-		ptr, err = syscall.UTF16PtrFromString(title)
+		ptr, err = windows.UTF16PtrFromString(title)
 
 		if err != nil {
 			return err
