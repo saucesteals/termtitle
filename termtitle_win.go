@@ -3,7 +3,6 @@
 package termtitle
 
 import (
-	"errors"
 	"sync"
 	"unsafe"
 
