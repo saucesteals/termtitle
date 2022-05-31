@@ -14,8 +14,6 @@ var (
 	libkernel32          = windows.NewLazySystemDLL("kernel32.dll")
 	procSetConsoleTitleW = libkernel32.NewProc("SetConsoleTitleW")
 	procGetConsoleTitleW = libkernel32.NewProc("GetConsoleTitleW")
-
-	errNullStartingString = errors.New("termtitle: title string starts with null char")
 )
 
 var (
